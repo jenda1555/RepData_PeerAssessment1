@@ -75,7 +75,7 @@ x <- rep(as.numeric(rownames(steps)), times = 2)
 steps <- data.frame(x, steps_min, type_day)
 
 png(filename = "plot4.png", width = 1800, height = 800)
-p <- qplot(x, steps_min, data = steps, geom = "line", facets = .~type_day, xlab = "5-min interval", 
+p <- qplot(x, steps_min, data = steps, geom = "line", facets = type_day ~., xlab = "5-min interval", 
           ylab = "Averaged steps taken per 5-minute interval", 
           main = "Averaged steps taken per 5-minute interval across weekdays and weekends")
 print(p)
